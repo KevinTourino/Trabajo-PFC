@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>QSTORAGE - Películas</title>
+</head>
+<body>
+  <h1> Qlickteck - Películas</h1>
+<div class="user">
+  <h3> Current User: <span id="nombreUsuario"></span></h3>
+  <input id="nuevoUsuario" placeholder="Create User">
+  <button onclick="crearUsuario()">Created</button>
+
+  <label for="seleccionarUsuario">Select User:</label>
+  <input list="usuariosList" id="seleccionarUsuario" onchange="cambiarUsuario()">
+  <datalist id="usuariosList"></datalist>
+
+  <button onclick="renombrarUsuario()">Rename</button>
+  <button onclick="eliminarUsuario()">Deleted</button>
+
+  <h4> Available Users:</h4>
+  <ul id="listaUsuarios"></ul>
+</div>
+<div class="addFilm">
+  <h2> Add films</h2>
+  <input id="titulo" placeholder="Title film">
+  <textarea id="descripcion" placeholder="Description (optinal)"></textarea>
+  <div id="enlaces-container" class="enlaces"></div>
+  <button onclick="agregarEnlace()">Add URL</button>
+  <button onclick="crearProducto()">Save film</button>
+</div>
+<div class="list">
+  <h2> Your films</h2>
+  <div id="lista-productos"></div>
+</div>
+</body>
+</html>
