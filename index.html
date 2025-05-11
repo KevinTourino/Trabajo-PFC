@@ -9,14 +9,14 @@
 <div class="user">
   <h3> Current User: <span id="nombreUsuario"></span></h3>
   <input id="nuevoUsuario" placeholder="Create User">
-  <button onclick="crearUsuario()">Created</button>
+  <button id="crearusuario">Created</button>
 
   <label for="seleccionarUsuario">Select User:</label>
   <input list="usuariosList" id="seleccionarUsuario" onchange="cambiarUsuario()">
   <datalist id="usuariosList"></datalist>
 
-  <button onclick="renombrarUsuario()">Rename</button>
-  <button onclick="eliminarUsuario()">Deleted</button>
+  <button id="rename">Rename</button>
+  <button id="delete">Deleted</button>
 
   <h4> Available Users:</h4>
   <ul id="listaUsuarios"></ul>
@@ -33,5 +33,7 @@
   <h2> Your films</h2>
   <div id="lista-productos"></div>
 </div>
+
+<script src="/JS/user-management.js"></script>
 </body>
 </html>
