@@ -34,6 +34,18 @@
   <div id="lista-productos"></div>
 </div>
 
+<form id="Feedback" action="https://formspree.io/f/xjkwynbp" method="POST">
+  <label>Your email:
+    <input type="email" name="email" required>
+  </label>
+  <label>Your message:
+    <textarea name="message" required></textarea>
+  </label>
+  <button type="submit">Send</button>
+  <p id="userfeedback"></p>
+</form>
+
 <script src="/JS/user-management.js"></script>
+<script src="/JS/feedback.js"></script>
 </body>
 </html>
