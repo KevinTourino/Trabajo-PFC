@@ -6,46 +6,48 @@
 </head>
 <body>
   <h1> Qlickteck - Películas</h1>
-<div class="user">
-  <h3> Current User: <span id="nombreUsuario"></span></h3>
-  <input id="nuevoUsuario" placeholder="Create User">
-  <button id="crearusuario">Created</button>
+  <div class="user">
+    <h3> Current User: <span id="nombreUsuario"></span></h3>
+    <input id="nuevoUsuario" placeholder="Create User">
+    <button id="crearusuario">Created</button>
 
-  <label for="seleccionarUsuario">Select User:</label>
-  <input list="usuariosList" id="seleccionarUsuario" onchange="cambiarUsuario()">
-  <datalist id="usuariosList"></datalist>
+    <label for="seleccionarUsuario">Select User:</label>
+    <input list="usuariosList" id="seleccionarUsuario" onchange="cambiarUsuario(); cambiarPeliculasDoom()">
+    <datalist id="usuariosList"></datalist>
 
-  <button id="rename">Rename</button>
-  <button id="delete">Deleted</button>
+    <button id="rename">Rename</button>
+    <button id="delete">Deleted</button>
 
-  <h4> Available Users:</h4>
-  <ul id="listaUsuarios"></ul>
-</div>
-<div class="addFilm">
-  <h2> Add films</h2>
-  <input id="titulo" placeholder="Title film">
-  <textarea id="descripcion" placeholder="Description (optinal)"></textarea>
-  <div id="enlaces-container" class="enlaces"></div>
-  <button onclick="agregarEnlace()">Add URL</button>
-  <button onclick="crearProducto()">Save film</button>
-</div>
-<div class="list">
-  <h2> Your films</h2>
-  <div id="lista-productos"></div>
-</div>
+    <h4> Available Users:</h4>
+    <ul id="listaUsuarios"></ul>
+  </div>
+  <div class="addFilm">
+    <h2> Add films</h2>
+    <button id="EliminarTodas">Eliminar tú lista de peliculas</button><br>
+    <input id="titulo" placeholder="Title film">
+    <textarea id="descripcion" placeholder="Description (optinal)"></textarea>
+    <div id="enlaces-container" class="enlaces"></div>
+    <button id="agregarEnlace">Add URL</button>
+    <button id="crearProducto">Save film</button>
+  </div>
+  <div class="list">
+    <h2> Your films</h2>
+    <div id="lista-productos"></div>
+  </div>
 
-<form id="Feedback" action="https://formspree.io/f/xjkwynbp" method="POST">
-  <label>Your email:
-    <input type="email" name="email" required>
-  </label>
-  <label>Your message:
-    <textarea name="message" required></textarea>
-  </label>
-  <button type="submit">Send</button>
-  <p id="userfeedback"></p>
-</form>
+  <form id="Feedback" action="https://formspree.io/f/xjkwynbp" method="POST">
+    <label>Your email:
+      <input type="email" name="email" required>
+    </label>
+    <label>Your message:
+      <textarea name="message" required></textarea>
+    </label>
+    <button type="submit">Send</button>
+    <p id="userfeedback"></p>
+  </form>
 
-<script src="/JS/user-management.js"></script>
-<script src="/JS/feedback.js"></script>
+  <script src="/JS/user-management.js"></script>
+  <script src="/JS/feedback.js"></script>
+  <script src="/JS/peliculas.js"></script>
 </body>
 </html>
