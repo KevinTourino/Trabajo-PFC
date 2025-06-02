@@ -1,0 +1,139 @@
+/* RESET Y BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* TÍTULO */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #FF6F61;
+  text-shadow: 0 0 10px #FF6F61aa;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CONTENEDOR DE USUARIO */
+.user {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #FF6F6144;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* LABELS E INPUTS */
+label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #FFB74D;
+}
+
+input[list],
+input[type="password"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: #333;
+  color: #eee;
+  border: 2px solid #FF6F61;
+  transition: background-color 0.3s ease, border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  background-color: #444;
+  border-color: #FFB74D;
+}
+
+/* GRUPO DE BOTONES */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* BOTONES */
+button {
+  flex: 1 1 45%;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF6F61;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FF6F6188;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #D32F2F;
+  box-shadow: 0 0 15px #FF6F61cc;
+}
+
+/* ENLACE REGISTRARSE */
+#login, #register {
+  flex: 1 1 45%;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFB74D;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FFB74D88;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login:hover, #register:hover {
+  background-color: #FF9800;
+  box-shadow: 0 0 15px #FFB74D;
+}
+
+/* LISTA DE USUARIOS */
+h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #FFB74Daa;
+  color: #FFB74D;
+  font-family: 'Poppins', sans-serif;
+}
+
+#listaUsuarios {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+#listaUsuarios li {
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #212121;
+  border-left: 4px solid #FF6F61;
+  border-radius: 4px;
+  color: #eee;
+}
