@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="/login/login.css" />
+</head>
+<body>
+  <h1>Qlickteck - Películas</h1>
+
+  <div class="user">
+    <label for="selectUser">Select User:</label>
+    <input list="userList" id="selectUser"/>
+    <datalist id="userList"></datalist>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" />
+
+    <div class="button-group">
+        <button id="login">Login</button>
+        <button id="register">Register</button>
+    </div>
+
+    <h4>Available Users:</h4>
+    <ul id="listUsers"></ul>
+  </div>
+  <script src="/login/login.js"></script>
+</body>
+</html>
