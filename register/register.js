@@ -52,7 +52,7 @@ function createdUser(){
 
       localStorage.setItem('CurrentUser', name);
 
-      window.location.href = '/index.html';
+      window.location.href = '/films/films.html';
     };
 
     requestAdd.onerror = function(event) {

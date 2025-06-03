@@ -1,0 +1,421 @@
+/*GLOBAL*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Espacio para la barra */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* TOOLBAR SUPERIOR  */
+.toolbar {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #FF6F61;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px #FF6F6144;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #FF6F61;
+  text-shadow: 0 0 5px #FF6F61aa;
+}
+
+/* BOTÓN DE APERTURA */
+#openBtn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #FFB74D;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#openBtn:hover {
+  color: #FF9800;
+}
+
+/*  SIDE NAV  */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+  margin-top: 70px;
+  box-shadow: 4px 0 10px #000;
+}
+
+.side-nav.open {
+  width: 220px;
+}
+
+/* ENLACES DEL CAJÓN */
+.side-nav a {
+  padding: 12px 32px;
+  display: block;
+  font-size: 20px;
+  color: #FFB74D;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.side-nav a:hover {
+  background-color: #292929;
+  color: #FF9800;
+}
+
+/* BOTÓN DE CIERRE */
+.side-nav .close-btn {
+  position: absolute;
+  top: 10px;
+  right: -15px;
+  font-size: 30px;
+  color: #FF6F61;
+  cursor: pointer;
+}
+
+/* SEPARADOR */
+.separador {
+  border: none;
+  border-top: 2px solid #FF6F61aa;
+  margin: 10px 0;
+  opacity: 0.7;
+}
+
+/* CONTENEDORES Y FORMULARIOS*/
+.container {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #FF6F6155;
+  margin-top: 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* BOTONES ESTILO DARK */
+button {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF6F61;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FF6F6188;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #D32F2F;
+  box-shadow: 0 0 15px #FF6F61cc;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+/* FORMULARIO DE AGREGAR PELÍCULA */
+.addFilm {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #FF6F6155;
+  margin-top: 120px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
+.addFilm h2 {
+  margin-bottom: 1.5rem;
+  color: #FFB74D;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #FFB74D88;
+}
+
+.addFilm input,
+.addFilm textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 2px solid #FF6F61;
+  background-color: #2a2a2a;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.addFilm input:focus,
+.addFilm textarea:focus {
+  border-color: #FFB74D;
+  background-color: #333;
+  outline: none;
+}
+
+
+.addFilm button {
+  margin: 0.5rem 0.3rem;
+}
+
+/* Contenedor de enlaces */
+.links {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.links input {
+  width: calc(100% - 20px);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #222;
+  border: 1px solid #FF6F61;
+  border-radius: 5px;
+  color: #eee;
+}
+
+/*SECCIÓN LISTA DE PELÍCULAS*/
+.list {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 2rem 0;
+  max-width: 900px;
+  width: 90%;
+}
+
+.list h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #FFB74D;
+  text-align: center;
+}
+
+/* Grid para la lista de películas */
+#list-films {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Cada film-item */
+.film-item {
+  background-color: #212121;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Inputs y textarea dentro de film-item */
+.film-item > input,
+.film-item > textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 2px solid #FF6F61;
+  background-color: #2a2a2a;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.film-item > input:focus,
+.film-item > textarea:focus {
+  border-color: #FFB74D;
+  background-color: #333;
+  outline: none;
+}
+
+/* Detalles de la película */
+.details-films {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #FF6F6155;
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Destacar títulos fuertes */
+.details-films strong {
+  color: #FF6F61;
+}
+
+/* Botón eliminar película */
+.film-item > button {
+  margin-top: 1rem;
+  background-color: #D32F2F;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px #D32F2Fcc;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: center;
+  width: 180px;
+  text-align: center;
+}
+
+.film-item > button:hover {
+  background-color: #FF6F61;
+  box-shadow: 0 0 15px #FF6F61cc;
+  transform: translateY(-2px);
+}
+
+/* Contenedor de links dentro de film-item */
+.links {
+  margin-top: 1rem;
+}
+
+/* Cada enlace individual */
+.object-link {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Inputs de los enlaces */
+.object-link input.tittle-link,
+.object-link input.link,
+.object-link input.price {
+  flex: 1 1 30%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1.5px solid #FF6F61;
+  background-color: #222;
+  color: #eee;
+  font-size: 0.9rem;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.object-link input.tittle-link:focus,
+.object-link input.link:focus,
+.object-link input.price:focus {
+  border-color: #FFB74D;
+  background-color: #333;
+  outline: none;
+}
+
+/* Botón eliminar enlace */
+.object-link button {
+  background-color: #D32F2F;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  box-shadow: 0 0 6px #D32F2Fcc;
+  transition: background-color 0.3s ease;
+}
+
+.object-link button:hover {
+  background-color: #FF6F61;
+  box-shadow: 0 0 8px #FF6F61cc;
+}
+
+/* Botón para agregar nuevo enlace */
+.links > button {
+  margin-top: 0.5rem;
+  background-color: #FFB74D;
+  color: #121212;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #FFB74Dcc;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links > button:hover {
+  background-color: #FF9800;
+  box-shadow: 0 0 15px #FF9800cc;
+}
+
+.list input,
+.list textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 2px solid #FF6F61;
+  background-color: #2a2a2a;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.list input:focus,
+.list textarea:focus {
+  border-color: #FFB74D;
+  background-color: #333;
+  outline: none;
+}
+
+.list input{
+    margin-top: 50px;
+}
+
+#position {
+  display: block;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
