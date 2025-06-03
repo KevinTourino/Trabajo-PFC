@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films</title>
+    <link rel="stylesheet" href="/films/films.css">
+</head>
+<body>
+    <div class="toolbar">
+        <span class="brand">Qlickteck - Películas</span>
+        <button id="openBtn">☰</button>
+    </div>
+
+    <div class="addFilm">
+        <h2> Add films</h2>
+        <button id="deleteAll">Eliminar tú lista de peliculas</button><br>
+        <input id="tittle" placeholder="Title film">
+        <textarea id="description" placeholder="Description (optinal)"></textarea>
+        <div id="links-container" class="links"></div>
+        <button id="addLink">Add URL</button>
+        <button id="createdFilm">Save film</button>
+    </div>
+    <div class="list">
+        <h2> Your films</h2>
+        <div id="list-films"></div>
+    </div>
+
+
+
+  <div class="side-nav" id="myDrawer">
+        <a href="javascript:void(0)" class="close-btn" id="closeBtn">&times;</a>
+        <a href="/settings/settings.html" id="settings">Settings</a>
+        <hr class="space">
+        <a href="/IA/IA.html" id="ia">IA</a>
+        <hr class="space">
+        <a href="/feedback/feedback.html" id="feedback">Feedback</a>
+        <hr class="space">
+        <a href="#" id="login">Close session</a>
+    </div>
+    <script src="/films/films.js"></script>
+</body>
+</html>
