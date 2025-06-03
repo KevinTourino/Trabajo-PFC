@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Contacto</title>
+  <link rel="stylesheet" href="/feedback/feedback.css" />
+</head>
+<body>
+
+  <div class="toolbar">
+      <span class="brand">Qlickteck - Películas</span>
+      <button id="openBtn">☰</button>
+  </div>
+
+
+  <h1>Formulario de Contacto</h1>
+
+  <div class="dates">
+    <form id="Feedback" action="https://formspree.io/f/xjkwynbp" method="POST">
+      <label for="email">Tu correo:</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="message">Tu mensaje:</label>
+      <textarea name="message" id="message" required></textarea>
+
+      <div class="button-group">
+        <button type="submit">Enviar</button>
+      </div>
+
+      <p id="userfeedback"></p>
+    </form>
+  </div>
+
+  <div class="side-nav" id="myDrawer">
+        <a href="javascript:void(0)" class="close-btn" id="closeBtn">&times;</a>
+        <a href="/films/films.html" id="film">Film list</a>
+        <hr class="space">
+        <a href="/IA/IA.html" id="ia">IA</a>
+        <hr class="space">
+        <a href="/settings/settings.html" id="settings">Settings</a>
+        <hr class="space">
+        <a href="#" id="login">Close session</a>
+    </div>
+  <script src="/feedback/feedback.js"></script>
+</body>
+</html>
