@@ -54,7 +54,7 @@ function getUser(){
             document.getElementById("selectUser").value = "";
             document.getElementById("password").value = "";
 
-            window.location.href = '/index.html'
+            window.location.href = '/films/films.html'
         } 
         else {
             alert("Contraseña incorrecta.")
