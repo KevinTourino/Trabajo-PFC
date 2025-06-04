@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel y Tijera</title>
+    <link rel="stylesheet" href="ptp.css">
+</head>
+<body>
+    <div class="toolbar">
+        <span class="brand">Qlickteck - Películas</span>
+        <button id="openBtn">☰</button>
+    </div>
+
+    <div class="game-container">
+        <h1>Juego de Piedra, Papel y Tijera</h1>
+
+        <div class="choices">
+            <button class="choice" id="rock">Piedra</button>
+            <button class="choice" id="paper">Papel</button>
+            <button class="choice" id="scissors">Tijera</button>
+        </div>
+
+        <div id="result" class="result">
+            <p>Selecciona una opción para empezar.</p>
+        </div>
+
+        <div class="scoreboard">
+            <p id="player-score">Jugador: 0</p>
+            <p id="computer-score">Computadora: 0</p>
+        </div>
+    </div>
+    <!-- Popup de felicitaciones -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button id="popup-close">Reiniciar Juego</button>
+        </div>
+    </div>
+
+
+    <div class="side-nav" id="myDrawer">
+        <a href="javascript:void(0)" class="close-btn" id="closeBtn">&times;</a>
+        <a href="../films/films.html" id="settings">Películas</a>
+        <hr class="space">
+        <a href="../settings/settings.html" id="ia">Settings</a>
+        <hr class="space">
+        <a href="../IA/IA.html" id="tres">IA</a>
+        <hr class="space">
+        <a href="../tresenraya/treser.html" id="ptp">Tres en Raya</a>
+        <hr class="space">
+        <a href="../memori/memori.html" id="memori">Memory</a>
+        <hr class="space">
+        <a href="../feedback/feedback.html" id="feedback">Feedback</a>
+        <hr class="space">
+        <a href="#" id="login">Close session</a>
+    </div>
+
+
+    <script src="ptp.js"></script>
+</body>
+</html>
