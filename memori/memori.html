@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Memoria</title>
+  <link rel="stylesheet" href="memori.css">
+</head>
+<body>
+
+  <div class="toolbar">
+      <span class="brand">Qlickteck - Películas</span>
+      <button id="openBtn">☰</button>
+  </div>
+    <div class="game-container">
+        <h1>Juego de Memoria</h1>
+        
+        <!-- Selector de dificultad -->
+        <div class="difficulty-selector">
+          <label for="difficulty">Selecciona dificultad:</label>
+          <select id="difficulty">
+            <option value="4">Fácil (4 pares)</option>
+            <option value="7">Medio (7 pares)</option>
+            <option value="9">Difícil (9 pares)</option>
+          </select>
+        </div>
+        
+        <!-- Botón para iniciar el juego -->
+        <button id="startButton">Iniciar Juego</button>
+      
+        <div class="memory-board">
+          <!-- Las cartas se generarán aquí con JavaScript -->
+        </div>
+        
+        <div class="score">
+          <p>Intentos: <span id="attempts">0</span></p>
+        </div>
+      </div>
+<!-- Popup de victoria -->
+<div id="winPopup" class="win-popup">
+    <div class="popup-content">
+      <h2>¡Felicidades! Has ganado</h2>
+      <p>Has completado el juego en <span id="finalAttempts"></span> intentos.</p>
+      <button id="closePopupButton">Cerrar</button>
+    </div>
+  </div>
+        
+      <div class="side-nav" id="myDrawer">
+        <a href="javascript:void(0)" class="close-btn" id="closeBtn">&times;</a>
+        <a href="../films/films.html" id="settings">Películas</a>
+        <hr class="space">
+        <a href="../settings/settings.html" id="ia">Settings</a>
+        <hr class="space">
+        <a href="../IA/IA.html" id="tres">IA</a>
+        <hr class="space">
+        <a href="../tresenraya/treser.html" id="ptp">Tres en Raya</a>
+        <hr class="space">
+        <a href="../ptp/ptp.html" id="memori">Yan ken po</a>
+        <hr class="space">
+        <a href="../feedback/feedback.html" id="feedback">Feedback</a>
+        <hr class="space">
+        <a href="#" id="login">Close session</a>
+    </div>
+
+  <script src="memori.js"></script>
+</body>
+</html>

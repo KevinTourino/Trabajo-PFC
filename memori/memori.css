@@ -1,0 +1,348 @@
+/* RESET Y BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.game-container {
+  text-align: center;
+  width: 600px;
+  margin-top: 50px;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00f2fe88;
+}
+
+/* TABLERO */
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 15px;
+  justify-items: center;
+}
+
+/* CARTAS */
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #222;
+  border: 2px solid #00f2fe;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #00f2fe;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 10px #00f2fe88;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-image: url('assets/reverso.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f2fecc;
+}
+
+/* La imagen de la carta (anverso) está oculta por defecto */
+.card img {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Cuando la carta esté volteada */
+.card.flipped {
+  background-color: #111;
+  color: #00f2fe;
+  background-image: none;
+  box-shadow: 0 0 15px #00f2fe;
+}
+
+.card.flipped img {
+  visibility: visible;
+}
+
+/* Cartas que ya fueron encontradas */
+.card.matched {
+  background-color: #0ff;
+  color: #121212;
+  pointer-events: none;
+  box-shadow: 0 0 25px #0ff;
+}
+
+/* PUNTAJE */
+.score {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px #00f2fe;
+}
+
+/* SELECTOR DE DIFICULTAD */
+.difficulty-selector {
+  margin-bottom: 20px;
+}
+
+.difficulty-selector select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #222;
+  color: #0ff;
+  box-shadow: 0 0 5px #00f2fe88;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.difficulty-selector select:hover {
+  background-color: #333;
+}
+
+/* BOTÓN INICIAR */
+#startButton {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: #00f2fe;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00f2feaa;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#startButton:hover {
+  background-color: #00bcd4;
+  box-shadow: 0 0 25px #00bcd4cc;
+}
+
+/* POPUP DE VICTORIA */
+.win-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 15, 30, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 30px #00f2feaa;
+  color: #00f2fe;
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00f2fe;
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#closePopupButton {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #00f2fe;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00f2feaa;
+  transition: background-color 0.3s ease;
+}
+
+#closePopupButton:hover {
+  background-color: #00bcd4;
+}
+
+h1{
+  margin-bottom: 20px;
+}
+
+label{
+  margin-right: 5px;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Espacio para la barra */
+}
+
+/* === TOOLBAR SUPERIOR === */
+.toolbar {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #FF6F61;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px #FF6F6144;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #FF6F61;
+  text-shadow: 0 0 5px #FF6F61aa;
+}
+
+/* BOTÓN DE APERTURA */
+#openBtn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #FFB74D;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#openBtn:hover {
+  color: #FF9800;
+}
+
+/* === SIDE NAV === */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+  margin-top: 70px;
+  box-shadow: 4px 0 10px #000;
+}
+
+.side-nav.open {
+  width: 220px;
+}
+
+/* ENLACES DEL CAJÓN */
+.side-nav a {
+  padding: 12px 32px;
+  display: block;
+  font-size: 20px;
+  color: #FFB74D;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.side-nav a:hover {
+  background-color: #292929;
+  color: #FF9800;
+}
+
+/* BOTÓN DE CIERRE */
+.side-nav .close-btn {
+  position: absolute;
+  top: 10px;
+  right: -15px;
+  font-size: 30px;
+  color: #FF6F61;
+  cursor: pointer;
+}
+
+/* SEPARADOR */
+.separador {
+  border: none;
+  border-top: 2px solid #FF6F61aa;
+  margin: 10px 0;
+  opacity: 0.7;
+}
+
+/* SECCIÓN DE CONTENIDO OPCIONAL */
+.container {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #FF6F6155;
+  margin-top: 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* BOTONES ESTILO DARK */
+button {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF6F61;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FF6F6188;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #D32F2F;
+  box-shadow: 0 0 15px #FF6F61cc;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
