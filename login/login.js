@@ -23,7 +23,7 @@ const request = indexedDB.open('UsersDB', 1);
 /*HTTP REGISTER*/        
 const register = document.getElementById("register")
 register.addEventListener("click",function(){
-    window.location.href = '/register/register.html';
+    window.location.href = '../register/register.html';
 })
 
 /*CALL FUCTION getUser()*/
@@ -54,7 +54,7 @@ function getUser(){
             document.getElementById("selectUser").value = "";
             document.getElementById("password").value = "";
 
-            window.location.href = '/films/films.html'
+            window.location.href = '../films/films.html'
         } 
         else {
             alert("Contraseña incorrecta.")
