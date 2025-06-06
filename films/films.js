@@ -141,9 +141,9 @@ deleteAll.addEventListener("click", function(){
         
     }
 
-    async function buscarEnOMDb(titulo) {
+    async function buscarEnOMDb(tittle) {
         try {
-            const url = `https://www.omdbapi.com/?apikey=d614632d&t=${encodeURIComponent(titulo)}`;
+            const url = `https://www.omdbapi.com/?apikey=d614632d&t=${encodeURIComponent(tittle)}`;
             const res = await fetch(url);
             const data = await res.json();
             if (data.Response !== "False"){
@@ -301,7 +301,7 @@ deleteAll.addEventListener("click", function(){
 
             updateRequest.onsuccess = function () {
                 console.log("Enlace agregado correctamente");
-                showFilms(); // o mostrarProductos() si ese es tu renderizador
+                showFilms();
             };
 
             updateRequest.onerror = function (e) {
@@ -427,7 +427,7 @@ function deleteLinkFilm(indexFilm, indexLink) {
 
         updateRequest.onsuccess = function () {
             console.log("Enlace eliminado correctamente");
-            showFilms(); // o mostrarProductos()
+            showFilms();
         };
 
         updateRequest.onerror = function (e) {
@@ -442,7 +442,7 @@ function deleteLinkFilm(indexFilm, indexLink) {
 
 
 if (localStorage.getItem("CurrentUser")==null)
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
 
 closeBtn.addEventListener('click', function(){
     drawer.classList.remove('open')
@@ -455,5 +455,5 @@ openBtn.addEventListener('click', function(){
 login.addEventListener('click', function(e) {
     e.preventDefault();
     localStorage.removeItem('CurrentUser');
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
 });
