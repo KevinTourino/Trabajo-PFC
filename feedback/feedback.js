@@ -4,7 +4,7 @@ const drawer = document.getElementById("myDrawer");
 const login =document.getElementById("login")
 
 if (localStorage.getItem("CurrentUser")==null)
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
 
 closeBtn.addEventListener('click', function(){
     drawer.classList.remove('open')
@@ -17,7 +17,7 @@ openBtn.addEventListener('click', function(){
 login.addEventListener('click', function(e) {
     e.preventDefault();
     localStorage.removeItem('CurrentUser');
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
 });
 
 
