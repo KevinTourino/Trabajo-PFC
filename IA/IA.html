@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA</title>
+    <link rel="stylesheet" href="IA.css">
+</head>
+<body>
+    <div class="toolbar">
+        <span class="brand">Qlickteck - Películas</span>
+        <button id="openBtn">☰</button>
+    </div>
+
+    <h1>Preguntame sobre películas</h1>
+    <div id="ai-interface">
+        <input id="ia-input" type="text" placeholder="Ask something…" />
+        <button id="ia-button">Send</button>
+        <div id="output-ia" style="max-height: 300px; overflow-y: auto; margin-top: 1em;"></div>
+    </div>
+
+    <div class="side-nav" id="myDrawer">
+        <a href="javascript:void(0)" class="close-btn" id="closeBtn">&times;</a>
+        <a href="../films/films.html" id="settings">Películas</a>
+        <hr class="space">
+        <a href="../settings/settings.html" id="ia">Settings</a>
+        <hr class="space">
+        <a href="../tresenraya/treser.html" id="tres">Tres en Raya</a>
+        <hr class="space">
+        <a href="../ptp/ptp.html" id="ptp">Yan ken po</a>
+        <hr class="space">
+        <a href="../memori/memori.html" id="memori">Memory</a>
+        <hr class="space">
+        <a href="../feedback/feedback.html" id="feedback">Feedback</a>
+        <hr class="space">
+        <a href="#" id="login">Close session</a>
+    </div>
+    <script src="IA.js"></script>
+</body>
+</html>
